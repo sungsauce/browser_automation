@@ -29,7 +29,6 @@ login_password = getpass.getpass("Password: ")
 
 driver = webdriver.Chrome()
 wait = WebDriverWait(driver, 15)
-#driver.implicitly_wait(3)
 
 def log_in():
     driver.get('https://accounts.listenfirstmedia.com/users/sign_in')
@@ -99,7 +98,8 @@ def apply_url_manager(url):
             print(f"{brand_id}: No URL exists for {company} on {channel}")
 
 def set_engagement_subscriber(url, brand_id):
-    try:    #If URL exists
+    try:    
+        #If URL exists
         dropdown = Select(driver.find_element_by_id('brand_twitter_engagement_handle_url_id'))
         dropdown.select_by_index(0)
         driver.find_element_by_xpath('//select[@id="brand_twitter_engagement_handle_subscriber_id"]/option[text()="' + company + '"]').click()
@@ -110,11 +110,13 @@ def set_engagement_subscriber(url, brand_id):
 
 def apply_engagement_subscriber(url, brand_id):
     driver.get(url)
-    try:    #If no Engagement Handles exist
+    try:    
+        #If no Engagement Handles exist
         driver.find_element_by_link_text('Create one').click()
         set_engagement_subscriber(url, brand_id)
 
-    except NoSuchElementException:  #If Engagement Handle exists
+    except NoSuchElementException:  
+        #If Engagement Handle exists
         table = driver.find_element_by_class_name("index_as_table")
         cells = table.find_elements_by_tag_name("td")
         found = False
