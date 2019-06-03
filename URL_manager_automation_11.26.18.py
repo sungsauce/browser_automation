@@ -31,7 +31,7 @@ driver = webdriver.Chrome()
 wait = WebDriverWait(driver, 15)
 
 def log_in():
-    driver.get('https://accounts.listenfirstmedia.com/users/sign_in')
+    driver.get('https://accounts.COMPANYX.com/users/sign_in')
     driver.find_elements_by_class_name('sign-in-button')[1].click()
     email = wait.until(EC.element_to_be_clickable((By.ID, 'identifierId')))
     email.send_keys(login_email)
@@ -132,10 +132,10 @@ def apply_engagement_subscriber(url, brand_id):
 
 # Creating urls for each channel based on brand_ids
 for brand_id in brand_ids:
-    ig_url = 'https://admin.listenfirstmedia.com/admin/movies/' + brand_id + '/instagram_accounts'
-    tw_url = 'https://admin.listenfirstmedia.com/admin/movies/' + brand_id + '/urls/list?channel=twitter'
-    tw_engagement_url = 'https://admin.listenfirstmedia.com/admin/movies/' + brand_id + '/brand_twitter_engagement_handles'
-    fb_url = 'https://admin.listenfirstmedia.com/admin/movies/' + brand_id + '/urls/list?channel=facebook'
+    ig_url = 'https://admin.COMPANYX.com/admin/movies/' + brand_id + '/instagram_accounts'
+    tw_url = 'https://admin.COMPANYX.com/admin/movies/' + brand_id + '/urls/list?channel=twitter'
+    tw_engagement_url = 'https://admin.COMPANYX.com/admin/movies/' + brand_id + '/brand_twitter_engagement_handles'
+    fb_url = 'https://admin.COMPANYX.com/admin/movies/' + brand_id + '/urls/list?channel=facebook'
 
     urls.extend([fb_url, tw_url, tw_engagement_url, ig_url])
 
