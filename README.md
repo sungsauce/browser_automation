@@ -5,10 +5,10 @@ Using Selenium to automate repetitive administrative tasks.
 
 ## Usage
 
-Given that this script was written specifically for an online tool not accessible to the public, it is not recommended that it be used as-is. If you'd like to use it for its primary functionalities or as boilerplate code, you can still run the script in a CLI using:
+Given that this script was written specifically for an online tool not accessible to the public, it is not recommended that it be used as-is. I'd recommend using this as boilerplate code; after customizing, you can run the script in a CLI using:
 
 ```
-python URL_manager_automation_11.26.18.py
+python [file_name.py]
 ```
 
 
